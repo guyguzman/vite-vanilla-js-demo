@@ -1,0 +1,20 @@
+{
+  "name": "vite-vanilla-js-demo",
+  "version": "1.0.0",
+  "description": "A demo project using Vite with vanilla JavaScript.",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/themes": "^3.2.1"
+  }
+}
