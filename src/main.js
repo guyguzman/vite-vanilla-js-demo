@@ -4,11 +4,14 @@ async function cycleImages() {
 
   const beforeImage = document.getElementById("beforeImage");
   const afterImage = document.getElementById("afterImage");
+  console.log(beforeImage, afterImage);
 
-  while (true) { // Repeat continuously
+  while (true) {
+    // Repeat continuously
     for (const image of images) {
       beforeImage.src = `public/img/${image.before}`;
       afterImage.src = `public/img/${image.after}`;
+      console.log(`Showing ${image.before} and ${image.after}`);
       await new Promise((resolve) => setTimeout(resolve, 5000)); // Pause for 5 seconds
     }
   }
