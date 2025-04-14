@@ -1,3 +1,21 @@
+async function cycleImages() {
+  const response = await fetch("./src/images.json");
+  const images = await response.json();
+
+  const beforeImage = document.getElementById("beforeImage");
+  const afterImage = document.getElementById("afterImage");
+
+  for (const image of images) {
+    beforeImage.src = `public/img/${image.before}`;
+    afterImage.src = `public/img/${image.after}`;
+    await new Promise((resolve) => setTimeout(resolve, 5000)); // Pause for 5 seconds
+  }
+}
+
+window.onload = () => {
+  cycleImages();
+};
+
 const $compare = document.querySelector(".compare");
 const $input = document.querySelector(".compare input");
 
@@ -9,12 +27,12 @@ $compare.style.setProperty("--mask-width", `${$input.value}%`);
 
 // ----- DEBUG STUFF ----- //
 
-const $toggleDebug = document.querySelector(".toggle-debug");
+// const $toggleDebug = document.querySelector(".toggle-debug");
 
-const removeOverflow = () => {
-  $compare.style.removeProperty("overflow");
-};
+// const removeOverflow = () => {
+//   $compare.style.removeProperty("overflow");
+// };
 
-$toggleDebug.addEventListener("click", () => {
-  document.body.classList.toggle("debug");
-});
+// $toggleDebug.addEventListener("click", () => {
+//   document.body.classList.toggle("debug");
+// });
